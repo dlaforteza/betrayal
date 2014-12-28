@@ -1,5 +1,3 @@
-
-
 <html>
 	<head>
 		<title>Betrayal Character Stats</title>
@@ -11,6 +9,10 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 		
 		<style>
+			body {
+				// font-size: 40em;
+			}
+			
 			.character_container {
 				display: none;
 			}
@@ -23,717 +25,926 @@
 				text-align: center;
 			}
 			
-			.stat.active {
+			.stat.start {
 				color: green;
 				font-weight: bold;
+			}
+			
+			.stat.current {
+				border: 2px solid black;
 			}
 		</style>
 	</head>
 	<body>
-		<form id="character_select_form" class="form-horizontal">
-			<div class="form-group">
-				<label for="character_select" class="col-sm-2 control-label">Character:</label>
-				<div class="col-sm-10">
-					<select class="form-control">
-											<option value="Ox Bellows">Ox Bellows</option>
-											<option value="Peter Akimoto">Peter Akimoto</option>
-											<option value="Father Rhinehardt">Father Rhinehardt</option>
-											<option value="Missy Dubourde">Missy Dubourde</option>
-											<option value="Vivian Lopez">Vivian Lopez</option>
-											<option value="Jenny LeClerc">Jenny LeClerc</option>
-											<option value="Darrin Flash Williams">Darrin Flash Williams</option>
-											<option value="Brandon Jaspers">Brandon Jaspers</option>
-											<option value="Professor Longfellow">Professor Longfellow</option>
-											<option value="Zoe Ingstrom">Zoe Ingstrom</option>
-											<option value="Madame Zostra">Madame Zostra</option>
-											<option value="Heather Granville">Heather Granville</option>
-										</select>
+	<div class="container-fluid">
+		<div class="row">
+			<form id="character_select_form" class="form-horizontal">
+				<div class="form-group">
+					<label for="character_select" class="col-sm-2 control-label">Character:</label>
+					<div class="col-sm-10">
+						<select class="form-control">
+													<option value="Ox Bellows">Ox Bellows</option>
+													<option value="Peter Akimoto">Peter Akimoto</option>
+													<option value="Father Rhinehardt">Father Rhinehardt</option>
+													<option value="Missy Dubourde">Missy Dubourde</option>
+													<option value="Vivian Lopez">Vivian Lopez</option>
+													<option value="Jenny LeClerc">Jenny LeClerc</option>
+													<option value="Darrin Flash Williams">Darrin Flash Williams</option>
+													<option value="Brandon Jaspers">Brandon Jaspers</option>
+													<option value="Professor Longfellow">Professor Longfellow</option>
+													<option value="Zoe Ingstrom">Zoe Ingstrom</option>
+													<option value="Madame Zostra">Madame Zostra</option>
+													<option value="Heather Granville">Heather Granville</option>
+												</select>
+					</div>
 				</div>
-			</div>
-		</form>
+			</form>
+		</div>
 		
-				<div class="character_container">
+				<div class="row character_container">
 			<h2>Ox Bellows <small>(October 18)</small></h2>
 			
 						<div>
 				<h4>Speed</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Might</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
-									<div class="stat col-sm-1 active">5</div>
+									<div class="stat col-sm-1 start current">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">8</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Sanity</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">2</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Knowledge</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">2</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 					</div>
-				<div class="character_container">
+				<div class="row character_container">
 			<h2>Peter Akimoto <small>(September 3)</small></h2>
 			
 						<div>
 				<h4>Speed</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Might</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Sanity</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">4</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Knowledge</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">4</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 					</div>
-				<div class="character_container">
+				<div class="row character_container">
 			<h2>Father Rhinehardt <small>(April 28)</small></h2>
 			
 						<div>
 				<h4>Speed</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Might</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">1</div>
 									<div class="stat col-sm-1 ">2</div>
-									<div class="stat col-sm-1 active">2</div>
+									<div class="stat col-sm-1 start current">2</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Sanity</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
-									<div class="stat col-sm-1 active">6</div>
+									<div class="stat col-sm-1 start current">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Knowledge</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">1</div>
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 					</div>
-				<div class="character_container">
+				<div class="row character_container">
 			<h2>Missy Dubourde <small>(February 14)</small></h2>
 			
 						<div>
 				<h4>Speed</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">4</div>
-									<div class="stat col-sm-1 active">5</div>
+									<div class="stat col-sm-1 start current">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Might</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Sanity</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">1</div>
 									<div class="stat col-sm-1 ">2</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Knowledge</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">4</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 					</div>
-				<div class="character_container">
+				<div class="row character_container">
 			<h2>Vivian Lopez <small>(January 11)</small></h2>
 			
 						<div>
 				<h4>Speed</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">4</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Might</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">2</div>
-									<div class="stat col-sm-1 active">2</div>
+									<div class="stat col-sm-1 start current">2</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Sanity</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">4</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">8</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Knowledge</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
-									<div class="stat col-sm-1 active">5</div>
+									<div class="stat col-sm-1 start current">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 					</div>
-				<div class="character_container">
+				<div class="row character_container">
 			<h2>Jenny LeClerc <small>(March 4)</small></h2>
 			
 						<div>
 				<h4>Speed</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">4</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Might</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">4</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Sanity</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">1</div>
 									<div class="stat col-sm-1 ">1</div>
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">4</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Knowledge</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 					</div>
-				<div class="character_container">
+				<div class="row character_container">
 			<h2>Darrin Flash Williams <small>(Junee 6)</small></h2>
 			
 						<div>
 				<h4>Speed</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
-									<div class="stat col-sm-1 active">6</div>
+									<div class="stat col-sm-1 start current">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Might</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Sanity</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">1</div>
 									<div class="stat col-sm-1 ">2</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Knowledge</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 					</div>
-				<div class="character_container">
+				<div class="row character_container">
 			<h2>Brandon Jaspers <small>(May 21)</small></h2>
 			
 						<div>
 				<h4>Speed</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">4</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Might</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Sanity</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Knowledge</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">1</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 					</div>
-				<div class="character_container">
+				<div class="row character_container">
 			<h2>Professor Longfellow <small>(July 27)</small></h2>
 			
 						<div>
 				<h4>Speed</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">4</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Might</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">1</div>
 									<div class="stat col-sm-1 ">2</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Sanity</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">1</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Knowledge</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
-									<div class="stat col-sm-1 active">5</div>
+									<div class="stat col-sm-1 start current">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 					</div>
-				<div class="character_container">
+				<div class="row character_container">
 			<h2>Zoe Ingstrom <small>(November 5)</small></h2>
 			
 						<div>
 				<h4>Speed</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">4</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">8</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Might</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Sanity</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">4</div>
-									<div class="stat col-sm-1 active">5</div>
+									<div class="stat col-sm-1 start current">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Knowledge</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">1</div>
 									<div class="stat col-sm-1 ">2</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 					</div>
-				<div class="character_container">
+				<div class="row character_container">
 			<h2>Madame Zostra <small>(December 10)</small></h2>
 			
 						<div>
 				<h4>Speed</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Might</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Sanity</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">4</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">8</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Knowledge</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">1</div>
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">4</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 					</div>
-				<div class="character_container">
+				<div class="row character_container">
 			<h2>Heather Granville <small>(August 2)</small></h2>
 			
 						<div>
 				<h4>Speed</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">4</div>
+									<div class="stat col-sm-1 start current">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Might</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Sanity</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">3</div>
-									<div class="stat col-sm-1 active">3</div>
+									<div class="stat col-sm-1 start current">3</div>
 									<div class="stat col-sm-1 ">4</div>
 									<div class="stat col-sm-1 ">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">6</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 						<div>
 				<h4>Knowledge</h4>
-				<div class="row">
+				<div class="trait row">
 									<div class="stat col-sm-1 ">2</div>
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">3</div>
 									<div class="stat col-sm-1 ">4</div>
-									<div class="stat col-sm-1 active">5</div>
+									<div class="stat col-sm-1 start current">5</div>
 									<div class="stat col-sm-1 ">6</div>
 									<div class="stat col-sm-1 ">7</div>
 									<div class="stat col-sm-1 ">8</div>
-								</div>
+									<div class="col-sm-1">
+						<button class="btn btn-default decrease_stat_button" type="submit">-</button>
+						<button class="btn btn-default increase_stat_button" type="submit">+</button>
+					</div>
+				</div>
 			</div>
 					</div>
 				
 		<script>
 		$(document).ready(function(){
 			$('.character_container:first').addClass('active');
+			
 			$('#character_select_form').change(function(){
 				var character = $(this).find('option:selected').val();
 				$('.character_container.active').removeClass('active');
 				$('h2:contains("'+character+'")').parent().addClass('active');
 			});
+			
+			$('.decrease_stat_button').click(function(){
+				$(this).parents('.trait:first').find('.stat.current').removeClass('current').prev().addClass('current');
+			})
+			
+			$('.increase_stat_button').click(function(){
+				$(this).parents('.trait:first').find('.stat.current').removeClass('current').next().addClass('current');
+			})
 		});
 		</script>
+	</div>
 	</body>
 </html>
