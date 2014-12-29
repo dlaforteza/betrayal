@@ -141,7 +141,10 @@
 					</div>
 				</div>
 			</div>
-					</div>
+					
+			<a href="#" class="reset_link">(Reset Stats)</a>
+		
+		</div>
 				<div class="character_container">
 			<h2>Darrin Flash Williams <small>(June 6)</small></h2>
 			
@@ -225,7 +228,10 @@
 					</div>
 				</div>
 			</div>
-					</div>
+					
+			<a href="#" class="reset_link">(Reset Stats)</a>
+		
+		</div>
 				<div class="character_container">
 			<h2>Father Rhinehardt <small>(April 28)</small></h2>
 			
@@ -309,7 +315,10 @@
 					</div>
 				</div>
 			</div>
-					</div>
+					
+			<a href="#" class="reset_link">(Reset Stats)</a>
+		
+		</div>
 				<div class="character_container">
 			<h2>Heather Granville <small>(August 2)</small></h2>
 			
@@ -393,7 +402,10 @@
 					</div>
 				</div>
 			</div>
-					</div>
+					
+			<a href="#" class="reset_link">(Reset Stats)</a>
+		
+		</div>
 				<div class="character_container">
 			<h2>Jenny LeClerc <small>(March 4)</small></h2>
 			
@@ -477,7 +489,10 @@
 					</div>
 				</div>
 			</div>
-					</div>
+					
+			<a href="#" class="reset_link">(Reset Stats)</a>
+		
+		</div>
 				<div class="character_container">
 			<h2>Madame Zostra <small>(December 10)</small></h2>
 			
@@ -561,7 +576,10 @@
 					</div>
 				</div>
 			</div>
-					</div>
+					
+			<a href="#" class="reset_link">(Reset Stats)</a>
+		
+		</div>
 				<div class="character_container">
 			<h2>Missy Dubourde <small>(February 14)</small></h2>
 			
@@ -645,7 +663,10 @@
 					</div>
 				</div>
 			</div>
-					</div>
+					
+			<a href="#" class="reset_link">(Reset Stats)</a>
+		
+		</div>
 				<div class="character_container">
 			<h2>Ox Bellows <small>(October 18)</small></h2>
 			
@@ -729,7 +750,10 @@
 					</div>
 				</div>
 			</div>
-					</div>
+					
+			<a href="#" class="reset_link">(Reset Stats)</a>
+		
+		</div>
 				<div class="character_container">
 			<h2>Peter Akimoto <small>(September 3)</small></h2>
 			
@@ -813,7 +837,10 @@
 					</div>
 				</div>
 			</div>
-					</div>
+					
+			<a href="#" class="reset_link">(Reset Stats)</a>
+		
+		</div>
 				<div class="character_container">
 			<h2>Professor Longfellow <small>(July 27)</small></h2>
 			
@@ -897,7 +924,10 @@
 					</div>
 				</div>
 			</div>
-					</div>
+					
+			<a href="#" class="reset_link">(Reset Stats)</a>
+		
+		</div>
 				<div class="character_container">
 			<h2>Vivian Lopez <small>(January 11)</small></h2>
 			
@@ -981,7 +1011,10 @@
 					</div>
 				</div>
 			</div>
-					</div>
+					
+			<a href="#" class="reset_link">(Reset Stats)</a>
+		
+		</div>
 				<div class="character_container">
 			<h2>Zoe Ingstrom <small>(November 5)</small></h2>
 			
@@ -1065,7 +1098,10 @@
 					</div>
 				</div>
 			</div>
-					</div>
+					
+			<a href="#" class="reset_link">(Reset Stats)</a>
+		
+		</div>
 				
 		<script>
 		$(document).ready(function(){
@@ -1082,14 +1118,23 @@
 				if(current_stat.is(':not(:first-child)')){
 					current_stat.removeClass('current').prev().addClass('current');
 				}
-			})
+			});
 			
 			$('.increase_stat_button').click(function(){
 				var current_stat = $(this).parents('.trait:first').find('.stat.current');
 				if(current_stat.next().is('.stat')){
 					current_stat.removeClass('current').next().addClass('current');
 				}
-			})
+			});
+			
+			$('.reset_link').click(function(){
+				var response = confirm('Are you sure?');
+				if (response) {
+					$('.current').removeClass('current');
+					$('.stat.start').addClass('current');
+				}
+				return false;
+			});
 		});
 		</script>
 	</div>
