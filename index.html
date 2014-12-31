@@ -8,6 +8,7 @@
 		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<script src="jquery.cookie.js"></script>
 		
 		<style>
 			body {
@@ -1111,29 +1112,54 @@
 				var character = $(this).find('option:selected').val();
 				$('.character_container.active').removeClass('active');
 				$('h2:contains("'+character+'")').parent().addClass('active');
+				$.cookie('character', character);
 			});
 			
 			$('.decrease_stat_button').click(function(){
-				var current_stat = $(this).parents('.trait:first').find('.stat.current');
+				var trait = $(this).parents('.trait:first');
+				var current_stat = trait.find('.stat.current');
 				if(current_stat.is(':not(:first-child)')){
-					current_stat.removeClass('current').prev().addClass('current');
+					var next_stat = current_stat.removeClass('current').prev().addClass('current');
+					$.cookie(trait.prev('h4').text(), next_stat.index());
+					console.log(next_stat.index());
 				}
 			});
 			
 			$('.increase_stat_button').click(function(){
-				var current_stat = $(this).parents('.trait:first').find('.stat.current');
+				var trait = $(this).parents('.trait:first');
+				var current_stat = trait.find('.stat.current');
 				if(current_stat.next().is('.stat')){
-					current_stat.removeClass('current').next().addClass('current');
+					var next_stat = current_stat.removeClass('current').next().addClass('current');
+					$.cookie(trait.prev('h4').text(), next_stat.index());
 				}
 			});
 			
 			$('.reset_link').click(function(){
 				var response = confirm('Are you sure?');
 				if (response) {
-					$('.current').removeClass('current');
-					$('.stat.start').addClass('current');
+					$('.active .current').removeClass('current');
+					$('.active .stat.start').each(function(index){
+						var current_stat = $(this).addClass('current');
+						var trait = $(this).parents('.trait:first').prev('h4').text();
+						$.cookie(trait, current_stat.index());
+						console.log(trait);
+						console.log(current_stat.index());
+					});
 				}
 				return false;
+			});
+			
+			// Load from cookies
+			if ($.cookie('character') !== undefined) {
+				$('h2:contains("'+$.cookie('character')+'")').parent().addClass('active');
+			}
+			$.each(['Speed', 'Might', 'Sanity', 'Knowledge'], function(index, value){
+				if ($.cookie(value) !== undefined) {
+					var trait = $('.active h4:contains("'+value+'")').next('.trait');
+					var saved_index = parseInt($.cookie(value)) + 1;
+					trait.find('.current').removeClass('current');
+					trait.find('.stat:nth-child('+saved_index+')').addClass('current');
+				}
 			});
 		});
 		</script>
